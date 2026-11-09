@@ -1,0 +1,6 @@
+.DS_Store
+*.pem
+.env
+__pycache__/
+# the application source is cloned by setup.sh, it is not part of your submission
+/pollie/
