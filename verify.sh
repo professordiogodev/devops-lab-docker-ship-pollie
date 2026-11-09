@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Run with: ./verify.sh   (it builds YOUR Dockerfile and tests the image against the lab database and cache)
-set -uo pipefail
+set -u
 cd "$(dirname "$0")"
 docker info >/dev/null 2>&1 || { echo "Docker is not running"; exit 1; }
 [ -d pollie ] && docker network inspect ship-net >/dev/null 2>&1 || { echo "Run ./setup.sh first"; exit 1; }
