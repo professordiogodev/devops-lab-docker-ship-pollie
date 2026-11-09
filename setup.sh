@@ -11,8 +11,8 @@ L="--label lab=docker-ship-pollie"
 if docker network inspect ship-net >/dev/null 2>&1; then echo "The lab is already set up. Run ./teardown.sh first to start over."; exit 1; fi
 
 if [ ! -d pollie/.git ]; then
-  echo "Getting the Pollie source (v0.1.0)..."
-  git clone -q --depth 1 --branch v0.1.0 https://github.com/professordiogodev/pollie.git pollie 2>/dev/null || { echo "could not clone Pollie (network?)"; exit 1; }
+  echo "Getting the Pollie source (v0.1.1)..."
+  git clone -q --depth 1 --branch v0.1.1 https://github.com/professordiogodev/pollie.git pollie 2>/dev/null || { echo "could not clone Pollie (network?)"; exit 1; }
 fi
 
 echo "Pulling images (first run only)..."
