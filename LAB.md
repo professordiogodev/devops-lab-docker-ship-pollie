@@ -2,14 +2,17 @@
 
 ## The situation
 
-Monday morning. The team wants Pollie, the polls application, running in containers by the end of the week. Someone already wrote a first `Dockerfile` ("it works on my machine") and nobody is happy:
+A pull request is open on Pollie, titled *"Add Dockerfile (it works on my machine)"*. You are the reviewer. The review thread so far:
 
-- the image is more than a gigabyte
-- every tiny code change makes CI wait for a full dependency install
-- a security reviewer found the app runs as **root**
-- nobody knows if the container is healthy until a user complains
+> **reviewer 1** The image is more than a gigabyte.
+>
+> **reviewer 2** Every tiny code change makes CI wait for a full dependency install.
+>
+> **security** The app runs as **root**. Blocking.
+>
+> **ops** Nobody knows whether the container is healthy until a user complains.
 
-You will measure the problem, then write the Dockerfile that fixes all four, and prove it by running the whole thing for real: the API, the worker and a vote travelling through Redis into PostgreSQL.
+Four comments, one author who wants the app running in containers by the end of the week. You will measure the problem first, then write the Dockerfile that answers all four comments, and prove it by running the whole thing for real: the API, the worker and a vote travelling through Redis into PostgreSQL.
 
 > **Your mission**
 > - Build the naive image and **measure** what is wrong with it
